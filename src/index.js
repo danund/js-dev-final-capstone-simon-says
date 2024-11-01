@@ -23,22 +23,22 @@ const pads = [
   {
     color: "red",
     selector: document.querySelector(".js-pad-red"),
-    sound: new Audio("https://github.com/danund/js-dev-final-capstone-simon-says/blob/main/assets/simon-says-sound-1.mp3"),
+    sound: new Audio("../assets/simon-says-sound-1.mp3"),
   },
   {
     color: "green",
     selector: document.querySelector(".js-pad-green"),
-    sound: new Audio("https://github.com/danund/js-dev-final-capstone-simon-says/blob/main/assets/simon-says-sound-2.mp3"),
+    sound: new Audio("../assets/simon-says-sound-2.mp3"),
   },
   {
     color: "blue",
     selector: document.querySelector(".js-pad-blue"),
-    sound: new Audio("https://github.com/danund/js-dev-final-capstone-simon-says/blob/main/assets/simon-says-sound-3.mp3"),
+    sound: new Audio("../assets/simon-says-sound-3.mp3"),
   },
   {
     color: "yellow",
     selector: document.querySelector(".js-pad-yellow"),
-    sound: new Audio("https://github.com/danund/js-dev-final-capstone-simon-says/blob/main/assets/simon-says-sound-4.mp3"),
+    sound: new Audio("../assets/simon-says-sound-4.mp3"),
   },
 ];
 
