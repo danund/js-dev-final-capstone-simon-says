@@ -156,6 +156,32 @@ function playHumanTurn() {
   );
 }
 
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function flashPads() {
+  const originalColors = pads.map(pad => getComputedStyle(pad.selector).backgroundColor); // Store original colors
+
+  const flashColor = async (color) => {
+    pads.forEach(pad => {
+      pad.selector.style.backgroundColor = color;
+    });
+    await delay(250); // Adjust delay as needed
+  };
+
+  await flashColor("orange");
+  await flashColor("white");
+  await flashColor("orange");
+  await flashColor("white");
+
+
+  // Restore original colors
+  pads.forEach((pad, index) => {
+    pad.selector.style.backgroundColor = originalColors[index];
+  });
+}
+
 function checkPress(color) {
   playerSequence.push(color);
   const index = playerSequence.length - 1;
@@ -167,16 +193,18 @@ function checkPress(color) {
 
 
   if (playerSequence[index] !== computerSequence[index]) {
-    resetGame("Oh no, that's wrong. Game over.");
-    return;
-  }
+    flashPads().then(() => {
+      resetGame("Oh no, that's wrong. Game over.");
+      return;
+    });
+}
+
 
 
   if (remainingPresses === 0) {
     checkRound();
   }
 }
-
 
 
 function checkRound() {
