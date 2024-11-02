@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  color: yellow;
+  color: orange;
   font-family: 'Rubik Wet Paint', sans-serif;
   display: flex;
   justify-content: center;
@@ -48,7 +48,7 @@ h1 {
 }
 
 .start-button:hover {
-  color: greenyellow;
+  color: orangeyellow;
   font-size: 18px;
   border-color: orangeyellow;
   transform: rotate(5deg);
